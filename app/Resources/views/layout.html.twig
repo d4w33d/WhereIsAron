@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="fr">
+
+  <head>
+
+    <meta charset="utf-8">
+
+    <title>{% block title %}{% endblock %}Where is Aron?</title>
+
+    <meta charset="utf-8">
+
+    <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}">
+
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/stylesheets/fonts.css') }}">
+    <link rel="stylesheet" type="text/css" href="{{ asset('assets/stylesheets/styles.css') }}">
+
+    {% block stylesheets %}{% endblock %}
+
+    <script type="text/javascript" src="{{ asset('assets/vendor/jquery/jquery.min.js') }}"></script>
+    <script type="text/javascript" src="{{ asset('assets/javascript/scripts.js') }}"></script>
+
+    {% block javascripts %}{% endblock %}
+
+  </head>
+
+  <body>
+
+    <div id="header">
+      <h1><a href="{{ path('homepage') }}">Where is Aron?</a></h1>
+      <p id="motto">
+        {% trans %}Parce que se couper le bras, c'est un peu dommage,<br>prévenez vos proches lorsque vous jouez aux aventuriers.{% endtrans %}
+      </p>
+      {% if app.user %}
+        <div id="user">
+          <p>{% trans with {'%username%': app.user.username} %}Bienvenue, <strong>%username%</strong>{% endtrans %}</p>
+          <ul>
+            <li><a href="{{ path('fos_user_profile_edit') }}">{{ 'Mon compte' | trans }}</a></li>
+            <li><a href="{{ path('fos_user_security_logout') }}">{{ 'Déconnexion' | trans }}</a></li>
+          </ul>
+        </div>
+      {% endif %}
+    </div>
+
+    <div id="wrap">
+      {% block body %}{% endblock %}
+    </div>
+
+    <div id="footer">
+      <p id="copyright">Where is Aron? &copy; {{ 'now' | date('Y') }}</p>
+    </div>
+
+  </body>
+
+</html>

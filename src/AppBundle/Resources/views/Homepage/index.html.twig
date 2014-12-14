@@ -1,0 +1,31 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+
+  <div class="wrapper">
+    <p class="step">{% trans %}Créez un compte.{% endtrans %}</p>
+    <p class="step">{% trans %}Indiquez ce que vous allez faire (activité et itinéraire).{% endtrans %}</p>
+    <p class="step">{% trans %}Indiquez quelles personnes prévenir en cas de besoin.{% endtrans %}</p>
+    <p class="step">{% trans %}Si vous n'avez pas donné signe de vie au bout d'un délai fixé à l'avance, vos proches sont prévenus automatiquement par SMS ou par email.{% endtrans %}</p>
+  </div>
+
+  <div class="wrapper">
+
+    <div class="authentication" data-panel-group>
+      <ul>
+        <li><a href="#" rel="register">{{ 'Créer un compte' | trans }}</a></li>
+        <li><a href="#" rel="login">{{ 'Connexion' | trans }}</a></li>
+      </ul>
+
+      <div class="panel" data-panel="register">
+        {% render(controller('FOSUserBundle:Registration:register')) %}
+      </div>
+      <div class="panel" data-panel="login">
+        {% render(controller('FOSUserBundle:Security:login')) %}
+      </div>
+    </div>
+
+  </div>
+
+{% endblock %}

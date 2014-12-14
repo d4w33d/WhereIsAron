@@ -1,0 +1,26 @@
+
+{# Disable layout if FOS page is embedded #}
+{% extends 'fos_' in app.request.attributes.get('_route')
+    ? '::layout.html.twig' 
+    : '::layout-blank.html.twig' %}
+
+{% block body %}
+
+  <div class="fos-user">
+
+    {% for type, messages in app.session.flashbag.all() %}
+      {% for message in messages %}
+        <div class="flash-{{ type }}">
+          {{ message }}
+        </div>
+      {% endfor %}
+    {% endfor %}
+
+    <div class="fos-user-content">
+      {% block fos_user_content %}
+      {% endblock fos_user_content %}
+    </div>
+
+  </div>
+
+{% endblock %}

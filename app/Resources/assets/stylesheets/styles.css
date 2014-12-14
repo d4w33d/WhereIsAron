@@ -1,0 +1,416 @@
+
+/* -------------------------------------------------------------------------- */
+/* Reset */
+
+body {
+  background: white;
+  color: black;
+}
+
+body,
+h1, h2, h3, h4, h5, h6,
+ul, ol, li,
+p,
+dl, dt, dd {
+  margin: 0;
+  padding: 0;
+}
+
+ul, ol, li {
+  list-style: none;
+}
+
+img {
+  border: none;
+}
+
+/* -------------------------------------------------------------------------- */
+/* Layout */
+
+body,
+h1, h2, h3, h4, h5, h6,
+input, select, textarea, button {
+  font-family: "Source Sans Pro", Arial, sans-serif;
+  font-weight: normal;
+  font-size: 15px;
+}
+
+a {
+  color: #275b74;
+  text-decoration: underline;
+}
+
+a:hover {
+  color: #000;
+  text-decoration: none;
+}
+
+hr {
+  display: block;
+  position: relative;
+  margin: 25px 0;
+  border: none;
+  border-top: 1px solid #e5e5e5;
+  outline: none;
+}
+
+#header {
+  position: relative;
+  overflow: hidden;
+  height: 255px;
+  background: #275b74;
+  border-bottom: 20px solid #e9eef1;
+}
+
+  #header h1 {
+    position: absolute;
+    left: 50%;
+    top: 55px;
+    margin: 0 0 0 -171px;
+    width: 342px;
+    height: 79px;
+  }
+
+    #header h1 a {
+      display: block;
+      position: absolute;
+      overflow: hidden;
+      left: 0;
+      right: 0;
+      top: 0;
+      bottom: 0;
+      background: url("../images/logo.png") no-repeat;
+      text-indent: -1000px;
+      font-size: 0;
+    }
+
+    #header h1 a:hover {
+      opacity: 0.8;
+    }
+
+  #motto {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 160px;
+    color: #8198a5;
+    text-align: center;
+    font-size: 15px;
+    font-weight: 300;
+  }
+
+  #user {
+    position: absolute;
+    right: 20px;
+    top: 18px;
+    font-size: 12px;
+  }
+
+    #user p {
+      position: relative;
+      color: #8198a5;
+      text-align: right;
+    }
+
+    #user ul {
+      position: relative;
+      text-align: right;
+    }
+
+      #user li {
+        display: inline-block;
+      }
+
+      #user li:before {
+        margin: 0 7px 0 5px;
+        content: "/";
+        color: #8198a5;
+      }
+
+      #user li:first-child:before {
+        display: none;
+      }
+
+        #user li a {
+          color: white;
+          text-decoration: none;
+          text-transform: uppercase;
+          font-weight: 600;
+        }
+
+        #user li a:hover {
+          color: #8198a5;
+        }
+
+#wrap {
+  position: relative;
+  overflow: hidden;
+  margin: 40px auto;
+  width: 750px;
+}
+
+  .wrapper {
+    position: relative;
+    margin: 0 0 40px 0;
+  }
+
+  .wrapper.box {
+    position: relative;
+    overflow: hidden;
+    padding: 20px;
+    border: 1px solid #b6b6b6;
+    border-radius: 5px;
+  }
+
+    .wrapper h3 {
+      margin: 0 0 15px 0;
+      border-bottom: 1px solid #e5e5e5;
+      text-transform: uppercase;
+      font-weight: 500;
+      font-size: 15px;
+    }
+
+    .wrapper p {
+      position: relative;
+      margin: 0 auto 15px auto;
+      font-weight: 300;
+    }
+
+    .wrapper p.step {
+      width: 440px;
+      text-align: center;
+    }
+
+    .wrapper p.step:after {
+      display: block;
+      position: relative;
+      margin: 10px auto;
+      width: 55px;
+      border-top: 1px solid #e5e5e5;
+      content: "";
+    }
+
+    .wrapper p.step:last-child:after {
+      display: none;
+    }
+
+    .wrapper dd {
+      margin: 0 0 15px 0;
+    }
+
+      .wrapper dt {
+        margin: 0;
+        border-bottom: 1px solid #e5e5e5;
+        text-transform: uppercase;
+        font-weight: 500;
+        font-size: 15px;
+      }
+
+      .wrapper dd {
+        margin: 10px 0 15px 15px;
+        font-weight: 300;
+        font-size: 15px;
+      }
+
+    .wrapper ul {
+      margin: 0 0 15px 0;
+    }
+
+      .wrapper ul li:before, .bullet:before {
+        display: inline-block;
+        margin: 0 10px 0 0;
+        content: "\2731";
+        font-size: 13px;
+      }
+
+  .wrapper .last {
+    margin-bottom: 0;
+  }
+
+.authentication {
+  position: relative;
+  margin: 0 auto;
+  width: 385px;
+}
+
+  .authentication ul {
+    position: relative;
+    overflow: hidden;
+    margin: 0;
+    padding: 0 0 1px 0;
+    z-index: 2;
+  }
+
+    .authentication ul li {
+      position: relative;
+      float: left;
+      margin: 0 10px 0 0;
+    }
+
+    .authentication ul li:before {
+      display: none;
+    }
+
+      .authentication ul li a {
+        display: block;
+        padding: 5px 8px 1px 8px;
+        background: #f2f2f2;
+        border: 1px solid #b6b6b6;
+        border-bottom: none;
+        border-radius: 5px 5px 0 0;
+        color: black;
+        text-transform: uppercase;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: 500;
+      }
+
+      .authentication ul li a:after {
+        display: none;
+        position: absolute;
+        left: 1px;
+        right: 1px;
+        bottom: -1px;
+        border-bottom: 1px solid white;
+        content: "";
+      }
+
+      .authentication ul li a:hover,
+      .authentication ul li a.active {
+        background: white;
+      }
+
+      .authentication ul li a:hover:after,
+      .authentication ul li a.active:after {
+        display: block;
+      }
+
+  .authentication .panel {
+    position: relative;
+    overflow: hidden;
+    margin: -1px 0 0 0;
+    padding: 20px;
+    border: 1px solid #b6b6b6;
+    border-radius: 0 0 5px 5px;
+    z-index: 1;
+  }
+
+#footer {
+  position: relative;
+  margin: 20px 0;
+}
+
+  #copyright {
+    position: relative;
+    color: #aaa;
+    text-align: center;
+    font-weight: 300;
+  }
+
+  #copyright:before {
+    display: block;
+    position: relative;
+    margin: 10px auto;
+    width: 55px;
+    border-top: 1px solid #e5e5e5;
+    content: "";
+  }
+
+/* -------------------------------------------------------------------------- */
+/* Auto-generated forms */
+
+.fos-user-content {
+  position: relative;
+  overflow: hidden;
+  margin: 0 auto;
+  max-width: 380px;
+}
+
+#form {
+  position: relative;
+  overflow: hidden;
+}
+
+form div {
+  position: relative;
+  overflow: hidden;
+}
+
+form label {
+  position: relative;
+  clear: both;
+  float: left;
+  margin: 6px 0 5px 0;
+  width: 140px;
+}
+
+  form label .mandatory {
+    color: #cc0000;
+    font-weight: bold;
+  }
+
+form input[type="text"],
+form input[type="email"],
+form input[type="password"],
+form textarea,
+form select {
+  position: relative;
+  float: left;
+  margin: 0 0 10px 0;
+  padding: 5px 8px 2px 8px;
+  width: 185px;
+  background: white;
+  border: 1px solid #b6b6b6;
+  border-radius: 5px;
+  outline: none;
+}
+
+form textarea {
+  width: 545px;
+  max-width: 545px;
+  height: 60px;
+}
+
+form select {
+  width: auto;
+}
+
+form input[type="submit"],
+form button {
+  clear: both;
+  margin: 15px 0 0 140px;
+  padding: 5px 8px 2px 8px;
+  background: #e0e0e0;
+  border: 1px solid #b6b6b6;
+  border-radius: 5px;
+  outline: none;
+  cursor: pointer;
+}
+
+form input[type="submit"]:hover,
+form button:hover {
+  background: #ccc;
+  border-color: #aaa;
+}
+
+form input[type="checkbox"] {
+  clear: both;
+  margin: 10px 45px 11px 0;
+}
+
+.wrapper form ul {
+  margin: 6px 0 3px 0;
+}
+
+  .wrapper form ul li {
+    margin: 0;
+    color: #cc0000;
+  }
+
+  .wrapper form ul li:before {
+    display: none;
+  }
+
+button.single {
+  margin: 0;
+}

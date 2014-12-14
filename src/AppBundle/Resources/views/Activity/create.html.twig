@@ -1,0 +1,20 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+
+  <div class="wrapper box">
+
+    <p class="bullet">{% trans %}Aucune activité en cours.{% endtrans %}</p>
+  
+    <h3>{% trans %}Démarrer une activité :{% endtrans %}</h3>
+  
+    {{ form(form) }}
+
+    <hr>
+
+    <p><em>{% trans %}Format des contacts : une adresse email ou un numéro de téléphone par ligne.<br>Numéro de téléphone au format international (ex : +33123456789){% endtrans %}</em></p>
+
+  </div>
+
+{% endblock %}

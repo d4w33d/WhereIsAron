@@ -1,0 +1,7 @@
+
+services:
+    acme.twig.app_extension:
+        class: AppBundle\Twig\AppExtension
+        arguments: [@translator.default]
+        tags:
+            - { name: twig.extension }

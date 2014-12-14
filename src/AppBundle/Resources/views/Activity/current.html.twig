@@ -1,0 +1,58 @@
+
+{% extends '::layout.html.twig' %}
+
+{% block body %}
+
+  <div class="wrapper box">
+    <ul>
+      <li>
+        {% trans with {'%last_ping_since%': activity.lastPingSince | date_interval} %}Dernier signe de vie il y a %last_ping_since%.{% endtrans %}
+      </li>
+    </ul>
+
+    <form action="{{ path('activity_ping') }}" method="get">
+      <button type="submit" class="single"><strong>{{ 'Je suis vivant !' | trans }}</strong></button>
+    </form>
+
+    <hr>
+
+    <form action="{{ path('activity_end') }}" method="get">
+      <button type="submit" class="single">{% trans %}J'ai terminé mon activité{% endtrans %}</button>
+    </form>
+
+    <hr>
+
+    <dl>
+      <dt>{{ 'Activité' | trans }}</dt>
+      <dd>{{ activity.name }}</dd>
+      <dt>{{ 'Description' | trans }}</dt>
+      <dd>{{ activity.description }}</dd>
+      <dt>{{ 'Itinéraire' | trans }}</dt>
+      <dd>{{ activity.locations }}</dd>
+      <dt>{{ 'Personnes à prévenir' | trans }}</dt>
+      <dd>{{ activity.contacts | nl2br }}</dd>
+    </dl>
+
+    <hr>
+
+    <ul class="last">
+      <li>
+        {% trans with {'%date%': activity.beginsAt | date('Y-m-d'), '%time%': activity.beginsAt | date('H:i:s')} %}L'activité a démarré le %date% à %time%.{% endtrans %}
+      </li>
+      <li>
+        {% trans with {'%delay%': activity.pingDelay | date_interval} %}Le délai sans signe de vie avant alerte est paramétré à %delay%.{% endtrans %}
+      </li>
+
+      {% if activity.alerted %}
+        <li>
+          <strong>{% trans %}Le délai sans signe de vie a été dépassé. Les contacts ont été avertis.{% endtrans %}</strong>
+        </li>
+      {% else %}
+        <li>
+          {% trans with {'%date%': activity.pingLimitAt | date('Y-m-d'), '%time%': activity.pingLimitAt | date('H:i:s')} %}Prochain signe de vie attendu avant %date% à %time%.{% endtrans %}
+        </li>
+      {% endif %}
+    </ul>
+  </div>
+
+{% endblock %}
