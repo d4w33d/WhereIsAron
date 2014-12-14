@@ -295,6 +295,10 @@ hr {
     z-index: 1;
   }
 
+  .flash-success {
+    text-align: center;
+  }
+
 #footer {
   position: relative;
   margin: 20px 0;
