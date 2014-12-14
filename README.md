@@ -21,6 +21,8 @@ Les endroit comportant du code métier sont :
     * Ressources spécifiques à l'application
     * Entités doctrine (User - étendu de FOS, Activity)
 
+Démo en ligne : http://whereisaron.davidmougel.com
+
 ## Notes techniques
 
 * **Symfony 2.6**
